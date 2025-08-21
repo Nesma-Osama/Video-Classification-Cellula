@@ -20,6 +20,7 @@ def extract_frames(video_path):
         frame = cv.cvtColor(frame, cv.COLOR_BGR2RGB)  # Ensure RGB
         frames.append(frame)
     cap.release()
+
     # Pad if fewer than 16 frames
     while len(frames) < FRAMES:
         frames.append(np.zeros((HEIGHT, WIDTH, 3), dtype=np.uint8))
